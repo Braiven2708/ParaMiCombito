@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Combito 🎄💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #0b1a2b, #1b2c4f, #34568b);
+            font-family: 'Montserrat', sans-serif;
+            color: #f0f0f0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 25px;
+            backdrop-filter: blur(6px);
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 20px;
+            margin-top: 50px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #ffd700;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            width: 70%;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: none;
+            background: #ff6f61;
+            color: white;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            background: #ff8a75;
+            transform: scale(1.05);
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 1.2em;
+            opacity: 0.9;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh); }
+            100% { transform: translateY(110vh); }
+        }
+
+        #bloqueo {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 0, 0, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+        }
+
+        #mensajeFinal {
+            display: none;
+            margin-top: 40px;
+            text-align: left;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NIEVE Y EMOJIS NAVIDEÑOS -->
+<script>
+    for (let i = 0; i < 100; i++) {
+        let snow = document.createElement("div");
+        snow.className = "snowflake";
+        snow.innerHTML = "❄️";
+        snow.style.left = Math.random() * 100 + "vw";
+        snow.style.animationDuration = (Math.random() * 5 + 5) + "s";
+        snow.style.fontSize = (Math.random() * 12 + 12) + "px";
+        document.body.appendChild(snow);
+    }
+</script>
+
+<div class="container">
+    <h1>🎄 Mi Combito 💖</h1>
+
+    <!-- Pregunta 1 -->
+    <div id="pregunta1">
+        <p>🔒 Primera pregunta: ¿Cuál es el nombre de nuestra planta? 🌱<br>
+            (2 palabras, en minúsculas)</p>
+        <input type="text" id="respuesta1" placeholder="tu respuesta en minúsculas">
+        <br>
+        <button onclick="verificarPrimera()">Responder</button>
+    </div>
+
+    <!-- Pregunta 2 -->
+    <div id="pregunta2" style="display:none;">
+        <p>🔒 Segunda pregunta: ¿Qué frase icónica se dice para irnos? 🎉<br>
+            (una sola palabra, minúscula, repite 3 veces una de las vocales)</p>
+        <input type="text" id="respuesta2" placeholder="tu respuesta en minúsculas">
+        <br>
+        <button onclick="verificarSegunda()">Responder</button>
+    </div>
+
+    <!-- Bloqueo hasta el 25 de diciembre -->
+    <div id="bloqueo">
+        <h2>🎄 Aún no puedes abrir el mensaje 🎁</h2>
+        <p>Debes esperar hasta el <b>25 de diciembre</b> para verlo ❤️</p>
+        <h3 id="contador"></h3>
+    </div>
+
+    <!-- Mensaje Final -->
+    <div id="mensajeFinal">
+        <p>🎉 Mi combito,<br>
+            Y para concluir siendo tal vez mi último mensaje tan abierto emocionalmente, quiero agradecer a cada uno por las vivencias en la Universidad 🏫💖, por cada historia y momento compartido con el grupo. Cada uno es un pilar fundamental 🤝✨.</p>
+
+        <p>Desde lo académico 📚 hasta lo más loquito 😜, desde los planes más sencillos hasta los más descabellados 🎲🍹, desde Chía hasta Fusagasugá 🚗, desde un café ☕ hasta una botella 🥂, desde un partido de Futsal ⚽ hasta una presentación artística 🎭, todo nos ha unido más como amigos 👬👭.</p>
+
+        <p>Esmero por mejorar mi gracia 😂, mis actitudes 😎, mis estados anímicos 😊, mi contribución académica 📖, y siempre dar aporte para fortalecer el lazo creado con cada uno ❤️🎄.</p>
+
+        <p>Espero que cada uno cumpla sus objetivos 🎯 para el nuevo año que se acerca 🎆 y que tengan a alguien orgulloso de ustedes 💌, aunque sea a distancia o al ladito 😎.</p>
+
+        <p>Los quiero mucho 💖🌟</p>
+        <p>🎁 Mira este video que les dedico:
+            <a href="AQUÍ_TU_LINK_DEL_VIDEO" target="_blank" style="color:#ffd700; text-decoration: none; font-weight:bold;">
+                🎬 Ver video
+            </a>
+        </p>
+        <p style="font-family: 'Beyond the Mountains', cursive; font-size:42px; color:#e63946; text-align:right;">
+            Att: Otro Brayan más
+        </p>
+    </div>
+</div>
+
+<script>
+    function verificarPrimera() {
+        let r1 = document.getElementById("respuesta1").value.trim().toLowerCase();
+        if (r1 === "brajijaso") {
+            permitirPaso();
+        } else {
+            document.getElementById("pregunta1").style.display = "none";
+            document.getElementById("pregunta2").style.display = "block";
+        }
+    }
+
+    function verificarSegunda() {
+        // Pase aunque falle
+        permitirPaso();
+    }
+
+    function permitirPaso() {
+        document.getElementById("pregunta1").style.display = "none";
+        document.getElementById("pregunta2").style.display = "none";
+        mostrarBloqueo();
+    }
+
+    function mostrarBloqueo() {
+        const bloqueo = document.getElementById("bloqueo");
+        bloqueo.style.display = "block";
+
+        let fechaObjetivo = new Date("December 25, 2025 00:00:00").getTime();
+
+        let intervalo = setInterval(() => {
+            let ahora = new Date().getTime();
+            let diferencia = fechaObjetivo - ahora;
+
+            if (diferencia <= 0) {
+                clearInterval(intervalo);
+                bloqueo.style.display = "none";
+                document.getElementById("mensajeFinal").style.display = "block";
+                return;
+            }
+
+            let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            let horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            let segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById("contador").innerHTML =
+                `⏳ ${dias} días • ${horas}h • ${minutos}m • ${segundos}s`;
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
